@@ -1,0 +1,23 @@
+<p>
+  <b>Libelle:</b>
+  <%= @facture_item.libelle %>
+</p>
+
+<p>
+  <b>Quantite:</b>
+  <%= @facture_item.quantite %>
+</p>
+
+<p>
+  <b>Prix:</b>
+  <%= @facture_item.prix %>
+</p>
+
+<p>
+  <b>Descritpion:</b>
+  <%= @facture_item.descritpion %>
+</p>
+
+
+<%= link_to 'Edit', edit_facture_item_path(@facture_item) %> |
+<%= link_to 'Back', facture_items_path %>

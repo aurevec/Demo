@@ -1,0 +1,13 @@
+<h1>Menu</h1><br />
+<% if session[:user_id] %>
+<%= link_to "User", users_path %><br />
+<%= link_to "TVA", tvas_path %><br />
+<%= link_to "Statut", statuts_path %><br />
+<%= link_to "Type", types_path %><br />
+<%= link_to "Client", clients_path %><br />
+<%= link_to "Facture", factures_path %><br />
+<%= link_to "Produit", produits_path %><br />
+<br /><%= button_to "Logout", logout_path, :method => :delete %>
+<% else %>
+<p>You must be logged in.</p>
+<% end %>

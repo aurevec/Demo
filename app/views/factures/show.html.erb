@@ -1,0 +1,101 @@
+<p>
+  <b>User:</b>
+  <%= @facture.user.login %>
+</p>
+
+<p>
+  <b>Reference:</b>
+  <%= @facture.reference %>
+</p>
+
+<p>
+  <b>Intitule:</b>
+  <%= @facture.intitule %>
+</p>
+
+<p>
+  <b>Date facturation:</b>
+  <%= @facture.date_facturation %>
+</p>
+
+<p>
+  <b>Delai paiement:</b>
+  <%= @facture.delai_paiement %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%= @facture.client.societe %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @facture.type.libelle %>
+</p>
+
+<p>
+  <b>Statut:</b>
+  <%= @facture.statut.libelle %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= number_to_currency(@facture.total_tva, :unit => "€") %>
+</p>
+
+<h2>Items</h2>
+<table>
+  <tr>
+    <th>Libelle</th>
+    <th>Quantite</th>
+    <th>Prix unitaire</th>
+	<th>Tva</th>
+	<th>Total</th>
+    <th>Descritpion</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @facture.facture_items.each do |facture_item| %>
+  <tr>
+    <td><%= facture_item.libelle %></td>
+    <td><%= facture_item.quantite %></td>
+    <td><%= number_to_currency(facture_item.prix, :unit => "€") %></td>
+	<td><%= facture_item.tva.libelle %></td>
+    <td><%= number_to_currency(facture_item.total_tva, :unit => "€") %></td>
+	<td><%= facture_item.descritpion %></td>
+    <td><%= link_to 'Edit', edit_facture_item_path(facture_item.id) %></td>
+    <td><%= link_to 'Destroy', [@facture, facture_item], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<h2>Add an item:</h2>
+<%= form_for([@facture, @facture.facture_items.build]) do |f| %>
+  <div class="field">
+    <%= f.label :libelle %><br />
+    <%= f.text_field :libelle %>
+  </div>
+  <div class="field">
+	<%= f.label :produit_id %><br />
+	<%= collection_select(:facture_item, :produit_id, Produit.all, :id, :nom) %>
+  </div>
+  <div class="field">
+	<%= f.label :tva_id %><br />
+	<%= collection_select(:facture_item, :tva_id, Tva.all, :id, :libelle) %>
+  </div>
+  <div class="field">
+    <%= f.label :quantite %><br />
+    <%= f.number_field :quantite, :min => 0, :max => 9999, :value => 1 %>
+  </div>
+  <div class="field">
+    <%= f.label :descritpion %><br />
+    <%= f.text_area :descritpion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Edit', edit_facture_path(@facture) %> |
+<%= link_to 'Back', factures_path %>

@@ -1,0 +1,37 @@
+<%= form_for(@facture_item) do |f| %>
+  <% if @facture_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@facture_item.errors.count, "error") %> prohibited this facture_item from being saved:</h2>
+
+      <ul>
+      <% @facture_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :libelle %><br />
+    <%= f.text_field :libelle %>
+  </div>
+  <div class="field">
+	<%= f.label :produit_id %><br />
+	<%= collection_select(:facture_item, :produit_id, Produit.all, :id, :nom) %>
+  </div>
+  <div class="field">
+	<%= f.label :tva_id %><br />
+	<%= collection_select(:facture_item, :tva_id, Tva.all, :id, :libelle) %>
+  </div>
+  <div class="field">
+    <%= f.label :quantite %><br />
+    <%= f.number_field :quantite, :min => 0, :max => 9999 %>
+  </div>
+  <div class="field">
+    <%= f.label :descritpion %><br />
+    <%= f.text_area :descritpion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

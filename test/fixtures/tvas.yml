@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  libelle: MyString
+  value: 9.99
+  display: false
+
+two:
+  libelle: MyString
+  value: 9.99
+  display: false

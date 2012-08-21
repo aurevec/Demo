@@ -1,0 +1,23 @@
+<p>
+  <b>Reference:</b>
+  <%= @produit.reference %>
+</p>
+
+<p>
+  <b>Nom:</b>
+  <%= @produit.nom %>
+</p>
+
+<p>
+  <b>Prix:</b>
+  <%= number_to_currency(@produit.prix, :unit => "€") %>
+</p>
+
+<p>
+  <b>Quantite:</b>
+  <%= @produit.quantite %>
+</p>
+
+
+<%= link_to 'Edit', edit_produit_path(@produit) %> |
+<%= link_to 'Back', produits_path %>

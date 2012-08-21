@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reference: MyString
+  intitule: MyString
+  date_facturation: 2012-08-09
+  delai_paiement: 1
+
+two:
+  reference: MyString
+  intitule: MyString
+  date_facturation: 2012-08-09
+  delai_paiement: 1

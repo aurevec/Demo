@@ -1,0 +1,29 @@
+<h1>Listing produits</h1>
+
+<table>
+  <tr>
+    <th>Reference</th>
+    <th>Nom</th>
+    <th>Quantite</th>
+    <th>Facture item</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @produits.each do |produit| %>
+  <tr>
+    <td><%= produit.reference %></td>
+    <td><%= produit.nom %></td>
+    <td><%= produit.quantite %></td>
+    <td><%= number_to_currency(produit.prix, :unit => "€") %></td>
+    <td><%= link_to 'Show', produit %></td>
+    <td><%= link_to 'Edit', edit_produit_path(produit) %></td>
+    <td><%= link_to 'Destroy', produit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Produit', new_produit_path %>

@@ -1,0 +1,53 @@
+<p>
+  <b>Societe:</b>
+  <%= @client.societe %>
+</p>
+
+<p>
+  <b>Adresse numero:</b>
+  <%= @client.adresse_numero %>
+</p>
+
+<p>
+  <b>Adresse rue:</b>
+  <%= @client.adresse_rue %>
+</p>
+
+<p>
+  <b>Adresse cp:</b>
+  <%= @client.adresse_cp %>
+</p>
+
+<p>
+  <b>Adresse ville:</b>
+  <%= @client.adresse_ville %>
+</p>
+
+<p>
+  <b>Adresse:</b>
+  <%= @client.adresse_pays %>
+</p>
+
+<p>
+  <b>Numero tva:</b>
+  <%= @client.numero_tva %>
+</p>
+
+<p>
+  <b>Telephone:</b>
+  <%= @client.telephone %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%= @client.mobile %>
+</p>
+
+<p>
+  <b>Mail:</b>
+  <%= @client.mail %>
+</p>
+
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

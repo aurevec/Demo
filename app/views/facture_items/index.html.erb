@@ -1,0 +1,29 @@
+<h1>Listing facture_items</h1>
+
+<table>
+  <tr>
+    <th>Libelle</th>
+    <th>Quantite</th>
+    <th>Prix</th>
+    <th>Descritpion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facture_items.each do |facture_item| %>
+  <tr>
+    <td><%= facture_item.libelle %></td>
+    <td><%= facture_item.quantite %></td>
+    <td><%= facture_item.prix %></td>
+    <td><%= facture_item.descritpion %></td>
+    <td><%= link_to 'Show', facture_item %></td>
+    <td><%= link_to 'Edit', edit_facture_item_path(facture_item) %></td>
+    <td><%= link_to 'Destroy', facture_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Facture item', new_facture_item_path %>

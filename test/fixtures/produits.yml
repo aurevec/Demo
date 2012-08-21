@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  reference: 
+  nom: MyString
+  quantite: 1
+  facture_item: 
+
+two:
+  reference: 
+  nom: MyString
+  quantite: 1
+  facture_item: 

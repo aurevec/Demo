@@ -1,0 +1,45 @@
+<%= form_for(@facture) do |f| %>
+  <% if @facture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@facture.errors.count, "error") %> prohibited this facture from being saved:</h2>
+
+      <ul>
+      <% @facture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :reference %><br />
+    <%= f.text_field :reference %>
+  </div>
+  <div class="field">
+    <%= f.label :intitule %><br />
+    <%= f.text_field :intitule %>
+  </div>
+  <div>
+	<%= f.label :client_id %><br />
+    <%= collection_select(:facture, :client_id, Client.all, :id, :societe) %>
+  </div>
+  <div class="field">
+    <%= f.label :statut_id %><br />
+    <%= collection_select(:facture, :statut_id, Statut.all, :id, :libelle) %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= collection_select(:facture, :type_id, Type.all, :id, :libelle) %>
+  </div>
+  <div class="field">
+    <%= f.label :date_facturation %><br />
+    <%= f.date_select :date_facturation, :order => [:day, :month, :year] %>
+  </div>
+  <div class="field">
+    <%= f.label :delai_paiement %><br />
+    <%= f.number_field :delai_paiement, :min => 0, :max => 75, :value => 30 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

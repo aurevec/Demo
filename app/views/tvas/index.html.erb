@@ -1,0 +1,27 @@
+<h1>Listing tvas</h1>
+
+<table>
+  <tr>
+    <th>Libelle</th>
+    <th>Value</th>
+    <th>Display</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tvas.each do |tva| %>
+  <tr>
+    <td><%= tva.libelle %></td>
+    <td><%= tva.value %></td>
+    <td><%= tva.display %></td>
+    <td><%= link_to 'Show', tva %></td>
+    <td><%= link_to 'Edit', edit_tva_path(tva) %></td>
+    <td><%= link_to 'Destroy', tva, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tva', new_tva_path %>

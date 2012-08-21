@@ -1,0 +1,25 @@
+<%= form_for(@statut) do |f| %>
+  <% if @statut.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@statut.errors.count, "error") %> prohibited this statut from being saved:</h2>
+
+      <ul>
+      <% @statut.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :libelle %><br />
+    <%= f.text_field :libelle %>
+  </div>
+  <div class="field">
+    <%= f.label :display %><br />
+    <%= f.check_box :display %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

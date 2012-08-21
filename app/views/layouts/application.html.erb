@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intranet</title>
+  <%= stylesheet_link_tag    "main", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+    <div id="top">
+        <%= render "shared/header" %>
+    </div>
+    <div>
+        <div id="left">
+            <%= render "shared/menu" %>
+        </div>
+        <div>
+            
+            <div id="right">
+				<% if !session[:user_id] %>
+                	<%= render "shared/login" %>
+				<% else %>
+					<p>Hello, <%= session[:login] %>!</p>
+				<% end %>
+            </div>
+            
+            <div id="content" class="right_content">
+
+                <div class="nav-bar">
+					<% if notice %>
+                    <div id="flashMessengers">
+                          <div class="flashMessenger">
+							<%= notice %>
+                          </div>
+                    </div>
+					<% end %>
+                </div>
+                <!-- affiche le contenu dynamique de la page -->
+                <div>
+                    <%= yield %>
+                </div>
+        </div>
+    </div>
+    </div>
+    <div id="bottom">
+            <%= render "shared/footer" %>
+    </div>
+</body>
+</html>

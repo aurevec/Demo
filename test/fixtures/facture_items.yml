@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  libelle: MyString
+  quantite: 1
+  prix: 9.99
+  descritpion: MyText
+
+two:
+  libelle: MyString
+  quantite: 1
+  prix: 9.99
+  descritpion: MyText

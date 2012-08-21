@@ -1,0 +1,57 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% @client.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :societe %><br />
+    <%= f.text_field :societe %>
+  </div>
+  <div class="field">
+    <%= f.label :adresse_numero %><br />
+    <%= f.number_field :adresse_numero %>
+  </div>
+  <div class="field">
+    <%= f.label :adresse_rue %><br />
+    <%= f.text_field :adresse_rue %>
+  </div>
+  <div class="field">
+    <%= f.label :adresse_cp %><br />
+    <%= f.number_field :adresse_cp %>
+  </div>
+  <div class="field">
+    <%= f.label :adresse_ville %><br />
+    <%= f.text_field :adresse_ville %>
+  </div>
+  <div class="field">
+    <%= f.label :adresse_pays %><br />
+    <%= f.text_field :adresse_pays %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_tva %><br />
+    <%= f.text_field :numero_tva %>
+  </div>
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.number_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br />
+    <%= f.number_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :mail %><br />
+    <%= f.text_field :mail %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

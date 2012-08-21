@@ -1,0 +1,175 @@
+body
+{
+	font-family: Verdana, Tahoma, "sans serif";
+	font-size: 12px;
+}
+
+a
+{
+    color: #333399;
+}
+
+a:hover
+{
+    color: red;
+}
+
+table
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th
+{
+    background: #EEEEEE;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+td
+{
+    padding-left: 12px;
+	padding-right: 12px;
+}
+
+tr:hover
+{
+    background: #ABCDEF;
+}
+
+label
+{
+    float: left;
+    width : 140px;
+}
+
+#top {
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+}
+
+#bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #036fab;
+    color: white;
+    height: 16px;
+    width: 100%;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+#left {
+    float: left;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+#left h1 {
+    font-size: 14px;
+}
+
+#right {
+    float: right;
+    background-color: #ece3a5;
+    padding: 5px;
+    width: 150px;
+}
+
+#right h1 {
+    font-size: 14px;
+}
+
+.center_content {
+    position: relative;
+    background-color: #dddddd;
+    padding: 5px;
+}
+
+.left_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin-left: 170px;
+    min-height: 450px;
+}
+
+.right_content {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 0px 170px 30px 170px;
+}
+
+#top a:link, #top a:visited {
+  color: white;
+  font-weight : bold;
+  text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+  color: black;
+  font-weight : bold;
+  text-decoration : underline;
+}
+
+#login_content{
+    background-color: white;
+    width: 300px;
+    height: 90px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/*
+ * FlashMessenger
+ */
+#flashMessengers
+{
+    border: 1px dotted;
+    margin: 0.5em auto;
+    max-width: 45em;
+}
+
+.flashMessenger
+{
+    background-color: #ABCDEF;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+div.searchDiv
+{
+    border-top: 1px dotted #666;
+    border-bottom: 1px dotted #666;
+    vertical-align: middle;
+}
+
+form ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+form ul li
+{
+    margin :0;
+    clear: both;
+    padding: 0.5em 0;
+    display: inline;
+}
+
+label.leftalign
+{
+    float: left;
+    font-weight: bold;
+    padding-right: 10px;
+    line-height: 1.6em;
+    text-align: right;
+    width: 100px;
+}
